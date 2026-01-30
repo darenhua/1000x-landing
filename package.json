@@ -4,7 +4,7 @@
 	"private": true,
 	"scripts": {
 		"dev": "bun ./index.html",
-		"build": "bun build ./index.html --outdir=dist --minify"
+		"build": "bun run build.ts"
 	},
 	"devDependencies": {
 		"@biomejs/biome": "2.3.13",
