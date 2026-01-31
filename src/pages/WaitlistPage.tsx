@@ -72,7 +72,7 @@ export function WaitlistPage() {
         </div>
 
         <div className="border border-border p-4 text-sm text-muted-foreground">
-          Stay tuned for exclusive updates and early access.
+          Hit me up on linkedin any time: <a href="https://www.linkedin.com/in/jason-yang-950b42202/" className="underline hover:no-underline">https://www.linkedin.com/in/jason-yang-950b42202/</a>
         </div>
       </div>
     );
@@ -116,8 +116,8 @@ export function WaitlistPage() {
       {message && (
         <div
           className={`border p-4 text-sm ${status === "success"
-              ? "border-foreground bg-foreground/5"
-              : "border-red-500 bg-red-500/5 text-red-500"
+            ? "border-foreground bg-foreground/5"
+            : "border-red-500 bg-red-500/5 text-red-500"
             }`}
         >
           {message}

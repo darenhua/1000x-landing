@@ -18,6 +18,8 @@ But I'm not in that position and the majority of developers in the world are not
 
 I'm a CS student and I hear nonstop from my peers -- their fears that they will be replaced in industry because they never formally learned to code. They use AI to write everything. I have peers who swing the opposite direction: pretending that claude code doesn't even exist because they want to put in the reps themselves and learn how to code the "right way". I hear from industry, that junior engineers open slop PRs and seniors are left to suffer in code review.
 
+I've tried a lot of different flavors of AI coding. Conductor. CodeLayer. Tmux'ing claude codes. 
+
 1000x dev is the tool that takes you from being a {% footnote note="By earning your own engineering insight. \n By being exposed to problems and the paths to solve them. \nBy being in the loop about the 'how'" %}programmer to an engineer{% /footnote %}. 
 
 ## sub problems
