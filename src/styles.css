@@ -398,10 +398,8 @@
 }
 
 .footnote-tooltip {
-  position: absolute;
-  bottom: calc(100% + 8px);
-  left: 50%;
-  transform: translateX(-50%);
+  position: fixed;
+  transform: translate(-50%, -100%);
   background: var(--foreground);
   color: var(--background);
   padding: 0.5rem 0.75rem;
@@ -411,7 +409,7 @@
   white-space: normal;
   width: max-content;
   max-width: 280px;
-  z-index: 50;
+  z-index: 9999;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
   pointer-events: none;
 }

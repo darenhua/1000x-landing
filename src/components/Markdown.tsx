@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+import React, { useState, useRef, useEffect } from "react";
+import { createPortal } from "react-dom";
 import Markdoc, { type Config, type Schema } from "@markdoc/markdoc";
 
 // Footnote component with hover tooltip
@@ -10,6 +11,18 @@ function Footnote({
   note: string;
 }) {
   const [isHovered, setIsHovered] = useState(false);
+  const [position, setPosition] = useState({ top: 0, left: 0 });
+  const wrapperRef = useRef<HTMLSpanElement>(null);
+
+  useEffect(() => {
+    if (isHovered && wrapperRef.current) {
+      const rect = wrapperRef.current.getBoundingClientRect();
+      setPosition({
+        top: rect.top - 8,
+        left: rect.left + rect.width / 2,
+      });
+    }
+  }, [isHovered]);
 
   // Convert \n to line breaks
   const noteContent = (note ?? "").split("\n").map((line, i, arr) => (
@@ -21,13 +34,26 @@ function Footnote({
 
   return (
     <span
+      ref={wrapperRef}
       className="footnote-wrapper"
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
     >
       <span className="footnote-text">{children}</span>
       <sup className="footnote-marker">*</sup>
-      {isHovered && <span className="footnote-tooltip">{noteContent}</span>}
+      {isHovered &&
+        createPortal(
+          <span
+            className="footnote-tooltip"
+            style={{
+              top: position.top,
+              left: position.left,
+            }}
+          >
+            {noteContent}
+          </span>,
+          document.body
+        )}
     </span>
   );
 }

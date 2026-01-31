@@ -95,8 +95,8 @@ function App() {
       const isInSidebar = isCompact
         ? (row === sidebarRegion.startRow && col === 0)
         : isMobile
-        ? (row === sidebarRegion.startRow && col < cols - 1)
-        : isInRegion(row, col, sidebarRegion);
+          ? (row === sidebarRegion.startRow && col < cols - 1)
+          : isInRegion(row, col, sidebarRegion);
 
       if (isInSidebar || isInRegion(row, col, contentRegion) || isDarkModeCell) {
         continue;
@@ -150,11 +150,10 @@ function App() {
                         setCurrentRoute(route.name);
                         setDrawerOpen(false);
                       }}
-                      className={`p-4 text-sm tracking-wide border transition-colors ${
-                        isActive
-                          ? "bg-foreground text-background border-foreground"
-                          : "bg-background text-foreground border-border hover:bg-foreground/5"
-                      }`}
+                      className={`p-4 text-sm tracking-wide border transition-colors ${isActive
+                        ? "bg-foreground text-background border-foreground"
+                        : "bg-background text-foreground border-border hover:bg-foreground/5"
+                        }`}
                     >
                       {route.label}
                     </button>
