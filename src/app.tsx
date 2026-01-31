@@ -48,7 +48,7 @@ function App() {
   const renderContent = () => {
     switch (currentRoute) {
       case "manifesto":
-        return <ManifestoPage />;
+        return <ManifestoPage onNavigateToWaitlist={() => setCurrentRoute("waitlist")} />;
       case "waitlist":
         return <WaitlistPage />;
     }
@@ -58,7 +58,7 @@ function App() {
   if (cols === 0 || rows === 0) return null;
 
   // Define regions based on layout - content has fixed height fitting viewport
-  const contentStartRow = 2;
+  const contentStartRow = isMobile ? 1 : 2;
   const contentEndRow = rows - 2; // Leave 2 rows at bottom
   const sidebarStartRow = 3;
 
